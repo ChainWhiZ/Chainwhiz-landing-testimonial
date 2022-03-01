@@ -1,38 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+:root {
+  --supportSectionColor: #131313;
+  --yellow: #d7ff2e;
+  --light: #ffffff;
+  --hoverCard: #232323;
+}
+
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
+  background-color: var(--supportSectionColor);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-family: "Poppins", sans-serif;
+  color: var(--light);
 }
 
-.App-link {
-  color: #61dafb;
+.text-yellow {
+  color: var(--yellow);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.title {
+  display: grid;
+  grid-template-columns: 5rem 1fr 5rem;
+  margin: 4rem 0 ;
+}
+span {
+  display: flex;
+}
+.title span h2 {
+  margin-bottom: 0;
+  font-weight: 700;
+  font-size: 4rem;
+}
+.title span p {
+  margin-top: 0;
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+.title span:first-child {
+  grid-column: 1/4;
+}
+.title span:last-child {
+  grid-column: 3/4;
+}
+
+.testimonal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 4rem 1fr;
+  max-width: 85rem;
+}
+
+.emptyAvatar {
+  --length: 3rem;
+  width: var(--length);
+  height: var(--length);
+  border-radius: 50%;
+  background-color: #c4c4c4;
+}
+figure {
+  text-align: left;
+  background-color: var(--hoverCard);
+  padding: 1.75rem;
+  border-radius: 0.75rem;
+  margin: 1.2rem;
+}
+figure > span > div:last-child {
+  padding-left: 1rem;
+  margin: auto 0;
+}
+figure > span h4 {
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+figure > span p {
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.25;
+}
+figure > p {
+  font-weight: 400;
+  line-height: 1.35;
+  font-size: 0.8rem;
+}
+figure:nth-child(even) {
+  grid-row: span 2;
+}
+figure:nth-child(odd) {
+  grid-row: span 1;
+}
+figure:last-child {
+  grid-row: 2/4;
+  grid-column: 3/4;
+}
+
+@media (max-width: 1460px) {
+  .testimonal {
+    grid-template-rows: 1fr 3.5rem 1fr;
   }
-  to {
-    transform: rotate(360deg);
+  .title span h2 {
+    font-size: 2.75rem;
+  }
+  .title span p {
+    margin-top: 0;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  .title {
+    margin: 2rem 0 1rem;
+  }
+
+  .testimonal {
+    max-width: 75rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .title {
+    margin: 4rem 0 2rem;
+  }
+  .testimonal {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  figure{
+    flex-basis: calc(40% - 2rem);
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .testimonal {
+    gap: 2%;
+  }
+  figure{
+    flex-basis:90%;
+  }
+  .title {
+    grid-template-columns: 7.5rem 1fr 7.5rem;
+    margin: 1rem 0;
   }
 }
