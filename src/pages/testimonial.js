@@ -31,7 +31,7 @@ const Testimonial = () => {
                                     {" "}Hei Hum
 								</Typography>
 						</Grid>
-                        <Grid item xs={6}>
+                        <Grid item sx={12} md={6}>
                                 <Typography
 									variant="h6"
 									color="common.white"
