@@ -9,6 +9,8 @@ function TwitterCard({ context,author,source }) {
         </div>
       </span>
       {context.split('\n').map(elem=><p>{elem}&nbsp;</p>)}
+      <div className="white-line"></div>
+      <p className="date-metadata">11:30pm  12 Mar, 2022</p>
     </figure>
   );
 }

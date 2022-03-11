@@ -55,6 +55,10 @@ span {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr 4rem 1fr;
   max-width: 85rem;
+  grid-template-areas: 
+  "a b c"
+  "d b e"
+  "d f e";
 }
 
 .emptyAvatar {
@@ -75,6 +79,10 @@ figure > span > div:last-child {
   padding-left: 1rem;
   margin: auto 0;
 }
+.white-line{
+  height: 1px;
+  background-color: white;
+}
 figure > span h4 {
   padding: 0;
   margin: 0;
@@ -93,15 +101,28 @@ figure > p {
   line-height: 1.35;
   font-size: 0.8rem;
 }
-figure:nth-child(even) {
-  grid-row: span 2;
+ figure:first-child {
+  grid-area: a;
 }
-figure:nth-child(odd) {
-  grid-row: span 1;
+figure:nth-child(2) {
+  grid-area: b;
+}
+figure:nth-child(3) {
+  grid-area: c;
+}
+figure:nth-child(4) {
+  grid-area: d;
+}
+figure:nth-child(5) {
+  grid-area: f;
 }
 figure:last-child {
-  grid-row: 2/4;
-  grid-column: 3/4;
+  grid-area: e;
+}
+
+.date-metadata{
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 @media (max-width: 1460px) {
@@ -130,10 +151,18 @@ figure:last-child {
     margin: 4rem 0 2rem;
   }
   .testimonal {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows:   1fr 4rem ;
+    grid-template-areas: 
+    "a b"
+    "d b"
+    "d f"
+    "c e"
+    "h e";
   }
+
+  
+  
   figure{
     flex-basis: calc(40% - 2rem);
     margin: 1rem;
@@ -142,13 +171,15 @@ figure:last-child {
 
 @media (max-width: 580px) {
   .testimonal {
+    display: flex;
+    flex-flow: row wrap;
     gap: 2%;
   }
   figure{
     flex-basis:90%;
   }
   .title {
-    grid-template-columns: 7.5rem 1fr 7.5rem;
+    grid-template-columns: 10rem 1fr 10rem;
     margin: 1rem 0;
   }
 }
