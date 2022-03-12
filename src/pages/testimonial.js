@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Typography, Grid, Container } from "@mui/material";
 import TwitterCard from "../components/twitterCard";
 import TweetsList from "../config/TweetsList";
-import Masonry from '@mui/lab/Masonry';
+import Masonry from "@mui/lab/Masonry";
 
 const Testimonial = () => {
 	return (
@@ -38,9 +38,13 @@ const Testimonial = () => {
 						</Typography>
 					</Grid>
 					<Grid xs={12} py={10}>
-						<Masonry columns={{sx:1, sm: 2,lg : 3 }} spacing={3} sx={{alignContent : "space-around"}}>
+						<Masonry
+							columns={{ xs: 1, sm: 2, lg: 3 }}
+							spacing={3}
+							sx={{ alignContent: "space-around" }}
+						>
 							{TweetsList.ids.map((id) => (
-									<TwitterCard tweetId={id} />
+								<TwitterCard tweetId={id} />
 							))}
 						</Masonry>
 					</Grid>
