@@ -41,7 +41,7 @@ const Testimonial = () => {
 						<Masonry
 							columns={{ xs: 1, sm: 2, lg: 3 }}
 							spacing={3}
-							sx={{ alignContent: "space-around" }}
+							sx={{margin: "0"}}
 						>
 							{TweetsList.ids.map((id) => (
 								<TwitterCard tweetId={id} />
