@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Typography, Grid, Container } from "@mui/material";
 import TwitterCard from "../components/twitterCard";
 import TweetsList from "../config/TweetsList";
+import Masonry from '@mui/lab/Masonry';
 
 const Testimonial = () => {
 	return (
@@ -36,35 +37,12 @@ const Testimonial = () => {
 							<span style={{ color: "#D6FE2E" }}>WAGMI</span>
 						</Typography>
 					</Grid>
-					<Grid item xs={12} p={10}>
-						<Grid
-							container
-							justifyContent="space-around"
-							alignItems="center"
-							sx={{ textAlign: "center" }}
-						>
+					<Grid xs={12} py={10}>
+						<Masonry columns={{sx:1, sm: 2,lg : 3 }} spacing={3} sx={{alignContent : "space-around"}}>
 							{TweetsList.ids.map((id) => (
-								<TwitterCard tweetId={id} />
+									<TwitterCard tweetId={id} />
 							))}
-							{/* <Grid item xs={10} md={4} sx={{ color: "#fff" }}>
-								H
-							</Grid>
-							<Grid item xs={10} md={4} sx={{ color: "#fff" }}>
-								H
-							</Grid>
-							<Grid item xs={10} md={4} sx={{ color: "#fff" }}>
-								H
-							</Grid>
-							<Grid item xs={10} md={4} sx={{ color: "#fff" }}>
-								H
-							</Grid>
-							<Grid item xs={10} md={4} sx={{ color: "#fff" }}>
-								H
-							</Grid>
-							<Grid item xs={10} md={4} sx={{ color: "#fff" }}>
-								H
-							</Grid> */}
-						</Grid>
+						</Masonry>
 					</Grid>
 				</Grid>
 			</Container>
