@@ -6,7 +6,7 @@ const TwitterCard = ({ tweetId }) => {
 	const [loading, setLoading] = React.useState(true);
 
 	return (
-		<div style={{textAlign: "center"}}>
+		<div style={{textAlign: "center" , margin:"13px"}}>
 			{loading && <CircularProgress sx={{ color: "#232222" }} />}
 			<TwitterTweetEmbed
 				options={{ theme: "dark", width: "auto"}}

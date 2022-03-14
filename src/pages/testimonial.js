@@ -40,7 +40,7 @@ const Testimonial = () => {
 					<Grid xs={12} py={10}>
 						<Masonry
 							columns={{ xs: 1, sm: 2, lg: 3 }}
-							spacing={3}
+							spacing={5}
 							sx={{margin: "0"}}
 						>
 							{TweetsList.ids.map((id) => (
